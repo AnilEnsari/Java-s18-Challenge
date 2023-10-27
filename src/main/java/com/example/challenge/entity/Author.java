@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.web.servlet.view.AbstractUrlBasedView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @Entity
@@ -22,6 +25,8 @@ public class Author {
    @Column(name = "last_name")
     private String lastName ;
 
-   private Book book ;
+   @OneToMany (mappedBy = "author",cascade = CascadeType.ALL)
+
+   private List <Book> bookList = new ArrayList<>();
 
 }

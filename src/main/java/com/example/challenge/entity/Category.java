@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -21,5 +22,5 @@ public class Category {
    private String name ;
 
     @OneToMany( mappedBy = "category",cascade = CascadeType.ALL)
-    private List <Book> bookList ;
+    private List <Book> bookList = new ArrayList<>();
 }
